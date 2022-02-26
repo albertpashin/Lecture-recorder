@@ -183,7 +183,7 @@ def zoom():
     pe.press('enter')
     t.sleep(15) 
 #-----------------------------#
-def shered_scr_zoom():
+def shered_scr_zoom():  #run the check share screen zoom
 
     GetTime()
     print('Cheking the screen',hour,':', minute,':', sec)
@@ -472,7 +472,7 @@ while(day != 4 or day != 3):
             while(hour <20):
                 t.sleep(300)
                 GetTime()
-                #shered_scr_zoom() #run the check share screen zoom
+                #shered_scr_zoom()
                 
             if (hour == 20):
                 end_record()
