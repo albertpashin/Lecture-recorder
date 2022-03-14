@@ -74,8 +74,8 @@ def GetXlVal(): #getting info from the xl file
 #-----------------------------#
 def Filmora(): #open filmora
 
-    #GetTime()
-    #print('Open Filmora',hour,':', minute,':', sec)
+    GetTime()
+    print('Open Filmora',hour,':', minute,':', sec)
     
     os.startfile('C:/Albert/Programs/Filmora/Filmora.exe')
     t.sleep(15)
@@ -123,7 +123,7 @@ def StartRecFilmora():
     GetTime()
     
     cords = pe.locateCenterOnScreen("Media//Filmora//StartRecFilmora.jpg", confidence=0.8)
-    print('Lets start Recording',hour,':', minute,':', sec)
+    print('Start Recording',hour,':', minute,':', sec)
     pe.click(cords)    
     t.sleep(10)
 #--------------------------------#
@@ -183,7 +183,7 @@ def zoom():
     pe.press('enter')
     t.sleep(15) 
 #-----------------------------#
-def shered_scr_zoom():  #run the check share screen zoom
+def shered_scr_zoom():
 
     GetTime()
     print('Cheking the screen',hour,':', minute,':', sec)
@@ -224,12 +224,15 @@ def write_name():
         pe.press('v')
 
     pe.write(' - ')
+    t.sleep(1)
 
     #lets write the lecturer name
     pc.copy(lecturer_name.value) #copy the value into clipboard
+    t.sleep(1)
 
     with pe.hold('ctrl'):
         pe.press('v')
+        t.sleep(1)
 
     pe.write(' - ')
 
@@ -337,7 +340,7 @@ while(day != 4 or day != 3):
     
     if(day == 6): #Sunday
         
-        if (hour == 9 and minute == 55):
+        if (hour == 9 and minute == 55 ):
 
             course_name_1 = ws.cell(row=4, column=2)
             GetXlVal()
@@ -347,13 +350,15 @@ while(day != 4 or day != 3):
             StartRecFilmora()
             
             while(hour < 13):
-                t.sleep(300)
+                t.sleep(20)
                 GetTime()
                 #shered_scr_zoom()
                 
             if (hour == 13):
                 end_record()
                 close_Filmora()
+                Change_To_English()
+                
 
                 i = 1
                 upload_youtube1()
@@ -362,7 +367,7 @@ while(day != 4 or day != 3):
 #=====================================================#            
     if(day == 0): #monday
         
-        if (hour == 7 and minute == 55): #course 1
+        if (hour == 7 and minute == 58): #course 1
 
             course_name_1 = ws.cell(row=2, column=3)
             GetXlVal()
@@ -372,13 +377,14 @@ while(day != 4 or day != 3):
             StartRecFilmora()
             
             while(hour < 12):
-                t.sleep(300)
+                t.sleep(20)
                 GetTime()
                 #shered_scr_zoom()
                 
             if (hour == 12): #mayeb TAB it one time
                 end_record()
                 close_Filmora()
+                Change_To_English()
 
                 i = 2
                 upload_youtube1()
@@ -395,13 +401,14 @@ while(day != 4 or day != 3):
             StartRecFilmora()
             
             while(hour <15 and minute < 55):
-                t.sleep(300)
+                t.sleep(20)
                 GetTime() 
                 #shered_scr_zoom()
                     
             if (hour == 15 and minute == 55):
                 end_record()
                 close_Filmora()
+                Change_To_English()
 
 
                 i = 3
@@ -418,16 +425,17 @@ while(day != 4 or day != 3):
             Filmora()
             StartRecFilmora()
             
-            while(hour < 18):
-                t.sleep(300)
+            while(hour < 19):
+                t.sleep(20)
                 GetTime()
                 #shered_scr_zoom()
                 
-            if (hour == 18):
+            if (hour == 19):
                 end_record()
                 close_Filmora()
+                Change_To_English()
 
-                i = 3
+                i = 4
                 upload_youtube1()
                 write_name()
                 upload_youtube2()
@@ -444,13 +452,14 @@ while(day != 4 or day != 3):
             StartRecFilmora()
             
             while(hour <17):
-                t.sleep(300)
+                t.sleep(60)
                 GetTime()
                 #shered_scr_zoom()
                 
             if (hour == 17):
                 end_record()
                 close_Filmora()
+                Change_To_English()
 
                 i = 5
                 upload_youtube1()
@@ -470,13 +479,14 @@ while(day != 4 or day != 3):
             StartRecFilmora()
             
             while(hour <20):
-                t.sleep(300)
+                t.sleep(20)
                 GetTime()
-                #shered_scr_zoom()
+                #shered_scr_zoom() #run the check share screen zoom
                 
             if (hour == 20):
                 end_record()
                 close_Filmora()
+                Change_To_English()
 
                 i = 6
                 upload_youtube1()
